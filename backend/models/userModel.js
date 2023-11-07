@@ -3,7 +3,7 @@ const bcrypt = require('bcrypt');
 const validator = require('validator');
 
 /*mongoose models come by default with methods like create, find, 
-findONe, delte that we can use. We can also create our own methods.*/
+findONe, delete that we can use. We can also create our own methods.*/
 
 const userSchema = new mongoose.Schema({
   email: {
@@ -27,7 +27,9 @@ userSchema.statics.signup = async function (email, password) {
   }
   if (!validator.isStrongPassword(password)) {
     // By default: 8 chars with low and upper case and special character.
-    throw Error('Password not strong enough.');
+    throw Error(
+      'Password not strong enough, 8 chars with low and upper case and special char.'
+    );
   }
 
   const user = await this.findOne({ email });

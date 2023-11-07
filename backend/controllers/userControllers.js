@@ -1,9 +1,10 @@
+require('dotenv').config();
 const User = require('../models/userModel');
 const jwt = require('jsonwebtoken');
 
 const createToken = (_id) => {
   // Create a token
-  const jwtSecret = process.env.SECRET || 'put a string on the .env file'
+  const jwtSecret = process.env.SECRET || 'put a string on the .env file';
   return jwt.sign({ _id: _id }, process.env.SECRET, { expiresIn: '3d' });
 };
 
@@ -30,7 +31,7 @@ exports.createUser = async (req, res) => {
   }*/
   // Pero otra opción, es ponerlo en un static method dentro del user Model.
   try {
-    // !we call the static function created in the user model to create a new DB entry in mongodb
+    // *we call the static function created in the user model to create a new DB entry in mongodb
     const newUser = await User.signup(email, password);
 
     // Token here with the user id

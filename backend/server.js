@@ -1,3 +1,4 @@
+// import dotenv package
 require('dotenv').config();
 const express = require('express');
 const workoutRoutes = require('./routes/workoutRoutes');
@@ -25,16 +26,16 @@ app.use('/api/workouts', workoutRoutes);
 app.use('/api/user', userRoutes);
 // Connect to DB
 
-const MONGO_URI = process.env.MONGO_URI || 4000
-const PORT = process.env.PORT||4000
+const MONGO_URI = process.env.MONGO_URI;
+const PORT = process.env.PORT || 5000;
 
 mongoose
   .connect(process.env.MONGO_URI)
   .then(() => {
     console.log('Connected to the DB');
     // listen for requests
-    app.listen(process.env.PORT, () => {
-      console.log(`Server is listening on port ${process.env.PORT}`);
+    app.listen(PORT, () => {
+      console.log(`Server is listening on port ${PORT}`);
     });
   })
   .catch((error) => console.log(error));

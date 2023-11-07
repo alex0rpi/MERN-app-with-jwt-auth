@@ -11,7 +11,7 @@ const Home = () => {
     const fetchWorkouts = async () => {
       //-------------------------------------------
       const response = await fetch('/api/workouts', {
-        headers: { 'authorization': `Bearer ${user.token}` },
+        headers: { authorization: `Bearer ${user.token}` },
       });
       /*we make this api call with the proxy property we put in package json.
       This allows avoiding also the CORS error.*/
@@ -27,8 +27,7 @@ const Home = () => {
   return (
     <div className="home">
       <div className="workouts">
-        {workouts &&
-          workouts.map((w) => <WorkoutDetails key={w._id} workout={w} />)}
+        {workouts && workouts.map((w) => <WorkoutDetails key={w._id} workout={w} />)}
       </div>
       <WorkoutForm />
     </div>

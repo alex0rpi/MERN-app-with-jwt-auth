@@ -10,7 +10,7 @@ const requireAuth = async (req, res, next) => {
   //   'Bearer ofidsofisd.dsfdsf.sdfdsfsfd'
   //   Split the string into its parts: bearer - token string.
 
-  console.log(authorization);
+  // console.log(authorization);
   const token = authorization.split(' ')[1];
   // 'Bearer ijodsijgod45546o4i5gfdgfodgj553' <-- we want the second part
   //   verify the token using jwt package
