@@ -1,6 +1,6 @@
 ## Fullstack MERN App
 
-This is a web app that uses stores workout exercices on a mongodb database.
+This is a CRUD app that stores workout exercices on a mongodb database.
 
 ### Main technologies used:
 ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
